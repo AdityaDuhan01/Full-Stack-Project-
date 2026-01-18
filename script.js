@@ -1,3 +1,4 @@
+alert("JS LOADED ON NETLIFY");
 document.addEventListener("DOMContentLoaded", () => {
     const themeToggle = document.getElementById("themeToggle");
 
