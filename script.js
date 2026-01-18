@@ -1,21 +1,30 @@
-const toggleBtn = document.getElementById("themeToggle");
+document.addEventListener("DOMContentLoaded", () => {
+    const themeToggle = document.getElementById("themeToggle");
 
-// Load saved theme
-const savedTheme = localStorage.getItem("theme");
-if (savedTheme === "light") {
-  document.body.classList.add("light");
-  toggleBtn.textContent = "☀️";
-}
+    if (!themeToggle) {
+        console.error("Theme toggle button not found");
+        return;
+    }
 
-// Toggle theme
-toggleBtn.addEventListener("click", () => {
-  document.body.classList.toggle("light");
+    // Load saved theme
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "dark") {
+        document.body.classList.add("dark");
+        themeToggle.textContent = "☀️";
+    }
 
-  if (document.body.classList.contains("light")) {
-    localStorage.setItem("theme", "light");
-    toggleBtn.textContent = "☀️";
-  } else {
-    localStorage.setItem("theme", "dark");
-    toggleBtn.textContent = "🌙";
-  }
+    // Toggle theme
+    themeToggle.addEventListener("click", () => {
+        document.body.classList.toggle("dark");
+
+        if (document.body.classList.contains("dark")) {
+            localStorage.setItem("theme", "dark");
+            themeToggle.textContent = "☀️";
+        } else {
+            localStorage.setItem("theme", "light");
+            themeToggle.textContent = "🌙";
+        }
+    });
+
+    console.log("Theme toggle JS loaded successfully");
 });
