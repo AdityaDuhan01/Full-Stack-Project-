@@ -1,4 +1,3 @@
-alert("JS LOADED ON NETLIFY");
 document.addEventListener("DOMContentLoaded", () => {
     const themeToggle = document.getElementById("themeToggle");
 
@@ -7,25 +6,15 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
     }
 
-    // Load saved theme
-    const savedTheme = localStorage.getItem("theme");
-    if (savedTheme === "dark") {
-        document.body.classList.add("dark");
-        themeToggle.textContent = "☀️";
-    }
-
-    // Toggle theme
+    // Click handler
     themeToggle.addEventListener("click", () => {
         document.body.classList.toggle("dark");
+        console.log("Theme toggled");
 
         if (document.body.classList.contains("dark")) {
-            localStorage.setItem("theme", "dark");
             themeToggle.textContent = "☀️";
         } else {
-            localStorage.setItem("theme", "light");
             themeToggle.textContent = "🌙";
         }
     });
-
-    console.log("Theme toggle JS loaded successfully");
 });
