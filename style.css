@@ -48,6 +48,8 @@
 /* MAIN CONTENT */
 .main {
     padding: 20px 30px;
+    position: relative;
+    z-index:1;
 }
 
 /* TOP BAR */
@@ -143,7 +145,7 @@ body.dark .card {
 
 #themeToggle {
     position: relative;
-    z-index: 20;
-    cursor: pointer;
+    z-index: 9999;
+    pointer-events: auto;
 }
 }
